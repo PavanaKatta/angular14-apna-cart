@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-//import { ProductService } from '../services/product.service';
+import { ProductService } from '../services/product.service';
 
 @Component({
   selector: 'app-home',
@@ -7,5 +7,5 @@ import { Component } from '@angular/core';
   styleUrls: ['./home.component.scss'],
 })
 export class HomeComponent {
-  //constructor(private productService: ProductService) {}
+  constructor(private productService: ProductService) {}
 }
