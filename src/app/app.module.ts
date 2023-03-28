@@ -9,6 +9,7 @@ import { AppComponent } from './app.component';
 
 // Common module
 import { MaterialModule } from './common/material.module';
+import { FlexLayoutModule } from '@angular/flex-layout';
 
 // Materail
 import { FooterComponent } from './footer/footer.component';
@@ -24,6 +25,7 @@ import { HomeComponent } from './home/home.component';
     ShareButtonsModule,
     ShareIconsModule,
     MaterialModule,
+    FlexLayoutModule,
   ],
   providers: [],
   bootstrap: [AppComponent],
