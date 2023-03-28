@@ -1,12 +1,36 @@
-<div class="container">
-  <div class="row product-list" style="margin: 1em 0;">
+Hi ddd
+
+<div *ngFor="let product of products; let i = index">
+
+  <div>
+    <mat-card class="example-card">
+      <mat-card-header>
+        <mat-card-title>{{product.title}}</mat-card-title>
+        <mat-card-subtitle>Dog Breed</mat-card-subtitle>
+        <mat-card-content>
+          <img
+            class="card-img-top"
+            src="{{ product.image }}"
+            alt="Card image cap"
+          />
+        </mat-card-content>
+
+      </mat-card-header>
+    </mat-card>
+  </div>
+
+</div>
+
+
+<div>
+  <div>
     <!-- START : Product Card -->
     <div
-      class="col-sm-12 col-md-6 col-lg-4 product-list__item"
+      class="col-sm-12 col-md-6 col-lg-4"
       *ngFor="let product of products; let i = index"
     >
       <div class="card mb-4 shadow-sm pd-5">
-        <div class="product-list__image">
+        <div>
           <img
             class="card-img-top"
             src="{{ product.image }}"
