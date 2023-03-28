@@ -1,26 +1,35 @@
 <mat-toolbar class="toolbar">
-  <!-- <div fxLayout="row">
+  <div fxLayout="row" fxLayoutGap="20">
+    <div fxFlex="10">
+      <button
+        mat-icon-button
+        aria-label="Toggle menu"
+        (click)="toggleMatSidenav()"
+      >
+        <mat-icon>menu</mat-icon>
+      </button>
+    </div>
 
-    <div>
+    <div fxFlex="40">
+      <span>
+        <i style="font-size: 20px;" class="fas fa-shipping-fast">&nbsp; </i>
+        <strong style="font-size: 20px;">ApnaKart</strong>
+      </span>
+    </div>
 
-  </div> -->
-
-  <button mat-icon-button aria-label="Toggle menu" (click)="toggleMatSidenav()">
-    <mat-icon>menu</mat-icon>
-  </button>
-
-  <span>
-    <i style="font-size: 40px;" class="fas fa-shipping-fast">&nbsp; </i>
-    <strong style="font-size: 30px;">ApnaKart</strong>
-  </span>
-
-  <span class="form-group">
-    <input type="text" class="form-control" placeholder="search products" />
-    <i class="fa-solid fa-magnifying-glass"></i>
-  </span>
-
-  <span class="material-icons right">shopping_cart</span>
+    <div fxFlex="90">
+      <div>
+        <input class="seachbox" type="text" placeholder="search products" />
+        <i class="fa-solid fa-magnifying-glass icon"></i>
+      </div>
+    </div>
+    <div fxFlex="10" fxLayoutAlign="end">
+      <!-- <span class="material-icons right">shopping_cart</span> -->
+      <i style="font-size: 20px;" class="fas fa-shopping-cart right"></i>
+    </div>
+  </div>
 </mat-toolbar>
+
 <mat-sidenav-container class="container">
   <mat-sidenav [(opened)]="matSidenavOpened" fixedTopGap="64" fixedInViewport>
     <mat-nav-list>
