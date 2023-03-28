@@ -64,9 +64,30 @@
 }
 
 .seachbox {
-  border-radius: 5px;
+  //border-radius: 5px;
   border: 1px solid #ccc;
+  width: 80%;
   // height: 25px;
   // padding: 5px;
   // width: 420px;
+}
+
+.img {
+  height: 64px;
+  width: 64px;
+}
+
+.img-content {
+  letter-spacing: 0;
+  font-family: monospace;
+  font-weight: 900;
+  font-size: larger;
+}
+
+.img-content:hover {
+  color: blue;
+}
+
+#img-content {
+  color: red !important;
 }
