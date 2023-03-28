@@ -17,9 +17,6 @@ import { MaterialModule } from './common/material.module';
 import { FlexLayoutModule } from '@angular/flex-layout';
 
 // Materail
-import { FooterComponent } from './footer/footer.component';
-import { HeaderComponent } from './header/header.component';
-import { HomeComponent } from './home/home.component';
 
 @NgModule({
   declarations: [AppComponent, FooterComponent, HeaderComponent, HomeComponent],
