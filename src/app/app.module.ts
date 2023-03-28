@@ -19,7 +19,7 @@ import { FlexLayoutModule } from '@angular/flex-layout';
 import { FooterComponent } from './components/footer/footer.component';
 import { HeaderComponent } from './components/header/header.component';
 import { HomeComponent } from './components/home/home.component';
-import { ProductListComponent } from './components/product/product-list/product-list.component';
+//import { ProductListComponent } from './components/product/product-list/product-list.component';
 
 // Materail
 
@@ -29,7 +29,7 @@ import { ProductListComponent } from './components/product/product-list/product-
     FooterComponent,
     HeaderComponent,
     HomeComponent,
-    ProductListComponent,
+    // ProductListComponent,
   ],
   imports: [
     BrowserModule,
