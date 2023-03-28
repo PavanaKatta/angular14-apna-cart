@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { IProduct } from '../model/product';
-import { ProductService } from '../services/product.service';
+import { IProduct } from '../../model/product';
+import { ProductService } from '../../services/product.service';
 
 @Component({
   selector: 'app-home',
@@ -17,15 +17,8 @@ export class HomeComponent implements OnInit {
   }
 
   getProducts() {
-    // this.productService.getProducts().subscribe(
-    //   (v =>  { this.products = v; }),
-    //   (e => console.log('error: ', e)),
-    //   (() => console.log('the sequence completed!'));
-
     this.productService.getProducts().subscribe((x) => {
       this.products = x;
-
-      console.log(x);
     });
   }
 }

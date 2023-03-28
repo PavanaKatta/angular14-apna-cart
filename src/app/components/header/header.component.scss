@@ -1,48 +1,48 @@
-:host {
-  height: 100%;
-  display: flex;
-  flex-direction: column;
-}
+// :host {
+//   height: 100%;
+//   display: flex;
+//   flex-direction: column;
+// }
 
-.toolbar {
-  position: fixed;
-  z-index: 2;
-  display: flex;
-}
+// .toolbar {
+//   position: fixed;
+//   z-index: 2;
+//   display: flex;
+// }
 
-.mat-toolbar {
-  background-color: #007bff !important;
-}
+// .mat-toolbar {
+//   background-color: #007bff !important;
+// }
 
-.toolbar > button {
-  color: #fff;
-}
+// .toolbar > button {
+//   color: #fff;
+// }
 
-.toolbar > span {
-  margin-left: 16px;
-}
+// .toolbar > span {
+//   margin-left: 16px;
+// }
 
-.container {
-  flex: 1 auto;
-}
+// .container {
+//   flex: 1 auto;
+// }
 
-.content {
-  flex: 1 auto;
-  display: flex;
-  flex-direction: column;
-  color: #000;
-  background: #fff;
-}
+// .content {
+//   flex: 1 auto;
+//   display: flex;
+//   flex-direction: column;
+//   color: #000;
+//   background: #fff;
+// }
 
-main {
-  margin-top: 64px;
-  flex: 1 auto;
-}
+// main {
+//   margin-top: 64px;
+//   flex: 1 auto;
+// }
 
-.form-control {
-  border-radius: 3px;
-  margin-left: 20px;
-}
+// .form-control {
+//   border-radius: 3px;
+//   margin-left: 20px;
+// }
 
 // .search-icon {
 //   position: absolute;
