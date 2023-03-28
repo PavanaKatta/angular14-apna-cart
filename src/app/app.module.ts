@@ -8,9 +8,11 @@ import { AppComponent } from './app.component';
 
 // Materail
 import { MatCardModule } from '@angular/material/card';
+import { FooterComponent } from './footer/footer.component';
+import { HeaderComponent } from './header/header.component';
 
 @NgModule({
-  declarations: [AppComponent],
+  declarations: [AppComponent, FooterComponent, HeaderComponent],
   imports: [
     BrowserModule,
     AppRoutingModule,
