@@ -9,10 +9,15 @@ import { retry, catchError } from 'rxjs/operators';
 import { map, tap, share } from 'rxjs/operators';
 import { IProduct } from '../model/product';
 
+import { Subject, BehaviorSubject } from 'rxjs/';
+
 @Injectable({
   providedIn: 'root',
 })
 export class ProductService {
+  // Local variable which stores
+  public cartItems = [];
+  public products = new Subject();
   //
   private _producturl = 'https://fakestoreapi.com/products';
   constructor(private _http: HttpClient) {}

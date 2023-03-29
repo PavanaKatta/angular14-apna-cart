@@ -18,7 +18,8 @@ export class HomeComponent implements OnInit {
 
   getProducts() {
     this.productService.getProducts().subscribe((x) => {
-      this.products = x;
+      this.products = x.filter((x) => x.category == 'electronics');
+      console.log(x);
     });
   }
 }
