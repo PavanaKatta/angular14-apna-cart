@@ -15,6 +15,7 @@ import { AppComponent } from './app.component';
 // Common module
 import { MaterialModule } from './common/material.module';
 import { FlexLayoutModule } from '@angular/flex-layout';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
 import { FooterComponent } from './components/footer/footer.component';
 import { HeaderComponent } from './components/header/header.component';
@@ -40,6 +41,7 @@ import { ProductListComponent } from './components/product/product-list/product-
     MaterialModule,
     FlexLayoutModule,
     HttpClientModule,
+    NgbModule,
   ],
   providers: [],
   bootstrap: [AppComponent],

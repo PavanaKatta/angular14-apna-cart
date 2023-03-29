@@ -86,9 +86,8 @@
   </mat-card>
 </div> -->
 
-<div class="container">
+<!-- <div class="container">
   <div class="row product-list" style="margin: 1em 0;">
-    <!-- START : Product Card -->
     <div
       class="col-sm-12 col-md-6 col-lg-4 product-list__item"
       *ngFor="let product of products; let i = index"
@@ -96,7 +95,7 @@
       <div class="card mb-4 shadow-sm pd-5">
         <div class="product-list__image">
           <img
-            style="width: 500px;height: 500px;"
+            style="width: 500px; height: 300px;;"
             class="card-img-top"
             src="{{ product.image }}"
             alt="Card image cap"
@@ -107,7 +106,7 @@
           <h4>{{ product.title }}</h4>
           <p class="card-text">{{ product.description }}</p>
 
-          <!-- <div class="text-center">
+          <div class="text-center">
             <button
               type="button"
               class="btn btn-sm"
@@ -118,10 +117,25 @@
             >
               Add To Cart
             </button>
-          </div> -->
+          </div>
         </div>
       </div>
     </div>
-    <!-- END : Product Card -->
+  </div>
+</div> -->
+<div class="container">
+  <div class="row">
+    <div class="col-md-12 py-3">
+      <h2 class="pb-2">Upcoming Offers</h2>
+      <ngb-carousel *ngIf="event_list">
+        <ng-template ngbSlide *ngFor="let event of upcoming_events">
+          <img [src]="event.img" alt="Random slide" />
+          <div class="carousel-caption">
+            <h3>{{ event.eventLocation }}</h3>
+            <p [innerText]="event.eventDescription"></p>
+          </div>
+        </ng-template>
+      </ngb-carousel>
+    </div>
   </div>
 </div>
