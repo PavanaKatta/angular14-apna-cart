@@ -126,10 +126,13 @@
 <div class="container">
   <div class="row">
     <div class="col-md-12 py-3">
-      <h2 class="pb-2">Upcoming Offers</h2>
       <ngb-carousel *ngIf="event_list">
         <ng-template ngbSlide *ngFor="let event of upcoming_events">
-          <img [src]="event.img" alt="Random slide" />
+          <img
+            style="width: 100%;object-fit: contain;"
+            [src]="event.img"
+            alt="Random slide"
+          />
           <div class="carousel-caption">
             <h3>{{ event.eventLocation }}</h3>
             <p [innerText]="event.eventDescription"></p>
@@ -139,3 +142,20 @@
     </div>
   </div>
 </div>
+
+<!-- <div class="container">
+  <div class="row">
+    <div class="col-md-12 py-3">
+      <h2 class="pb-2">Upcoming Offers</h2>
+      <img
+        stye="width: 100%;object-fit: contain;"
+        [src]="upcoming_events[0].img"
+        alt="Random slide"
+      />
+      <div class="carousel-caption">
+        <h3>{{ upcoming_events[0].eventLocation }}</h3>
+        <p [innerText]="upcoming_events[0].eventDescription"></p>
+      </div>
+    </div>
+  </div>
+</div> -->
