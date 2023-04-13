@@ -255,52 +255,141 @@ fxLayoutAlign="start stretch"
   </div>
 </div> -->
 
-<div fxLayout="row" fxLayoutGap="20">
-  <div fxFlex="20" class="border">
-    <a href="https://www.malnad.store">
-      <span
-        ><img
-          width="200"
-          height="100"
-          src="https://www.malnad.store/wp-content/uploads/2022/06/Malnad-Store-Registered-Logo.png"
-          class="et_b_header-logo-img"
-          alt="Malnad Store Official"
-          decoding="async"
-          srcset="
-            https://www.malnad.store/wp-content/uploads/2022/06/Malnad-Store-Registered-Logo.png          1167w,
-            https://www.malnad.store/wp-content/uploads/2022/06/Malnad-Store-Registered-Logo-300x152.png   300w,
-            https://www.malnad.store/wp-content/uploads/2022/06/Malnad-Store-Registered-Logo-1024x520.png 1024w,
-            https://www.malnad.store/wp-content/uploads/2022/06/Malnad-Store-Registered-Logo-768x390.png   768w,
-            https://www.malnad.store/wp-content/uploads/2022/06/Malnad-Store-Registered-Logo-1x1.png         1w,
-            https://www.malnad.store/wp-content/uploads/2022/06/Malnad-Store-Registered-Logo-10x5.png       10w,
-            https://www.malnad.store/wp-content/uploads/2022/06/Malnad-Store-Registered-Logo-600x305.png   600w
-          "
-          sizes="(max-width: 1167px) 100vw, 1167px"
-      /></span>
+<div fxLayout="column" fxLayoutGap="20">
+  <div fxLayout="row" fxLayoutGap="20">
+    <div fxFlex="20" class="border">
+      <a href="https://www.malnad.store">
+        <span
+          ><img
+            width="200"
+            height="100"
+            src="https://www.malnad.store/wp-content/uploads/2022/06/Malnad-Store-Registered-Logo.png"
+            class="et_b_header-logo-img"
+            alt="Malnad Store Official"
+            decoding="async"
+            srcset="
+              https://www.malnad.store/wp-content/uploads/2022/06/Malnad-Store-Registered-Logo.png          1167w,
+              https://www.malnad.store/wp-content/uploads/2022/06/Malnad-Store-Registered-Logo-300x152.png   300w,
+              https://www.malnad.store/wp-content/uploads/2022/06/Malnad-Store-Registered-Logo-1024x520.png 1024w,
+              https://www.malnad.store/wp-content/uploads/2022/06/Malnad-Store-Registered-Logo-768x390.png   768w,
+              https://www.malnad.store/wp-content/uploads/2022/06/Malnad-Store-Registered-Logo-1x1.png         1w,
+              https://www.malnad.store/wp-content/uploads/2022/06/Malnad-Store-Registered-Logo-10x5.png       10w,
+              https://www.malnad.store/wp-content/uploads/2022/06/Malnad-Store-Registered-Logo-600x305.png   600w
+            "
+            sizes="(max-width: 1167px) 100vw, 1167px"
+        /></span>
 
-      <!-- <span class="fixed"
-        ><img
-          width="1167"
-          height="593"
-          src="https://www.malnad.store/wp-content/uploads/2022/06/Malnad-Store-Registered-Logo.png"
-          class="et_b_header-logo-img"
-          alt="Malnad Store Official"
-          decoding="async"
-          srcset="
-            https://www.malnad.store/wp-content/uploads/2022/06/Malnad-Store-Registered-Logo.png          1167w,
-            https://www.malnad.store/wp-content/uploads/2022/06/Malnad-Store-Registered-Logo-300x152.png   300w,
-            https://www.malnad.store/wp-content/uploads/2022/06/Malnad-Store-Registered-Logo-1024x520.png 1024w,
-            https://www.malnad.store/wp-content/uploads/2022/06/Malnad-Store-Registered-Logo-768x390.png   768w,
-            https://www.malnad.store/wp-content/uploads/2022/06/Malnad-Store-Registered-Logo-1x1.png         1w,
-            https://www.malnad.store/wp-content/uploads/2022/06/Malnad-Store-Registered-Logo-10x5.png       10w,
-            https://www.malnad.store/wp-content/uploads/2022/06/Malnad-Store-Registered-Logo-600x305.png   600w
-          "
-          sizes="(max-width: 1167px) 100vw, 1167px"
-      /></span> -->
-    </a>
+        <!-- <span class="fixed"
+          ><img
+            width="1167"
+            height="593"
+            src="https://www.malnad.store/wp-content/uploads/2022/06/Malnad-Store-Registered-Logo.png"
+            class="et_b_header-logo-img"
+            alt="Malnad Store Official"
+            decoding="async"
+            srcset="
+              https://www.malnad.store/wp-content/uploads/2022/06/Malnad-Store-Registered-Logo.png          1167w,
+              https://www.malnad.store/wp-content/uploads/2022/06/Malnad-Store-Registered-Logo-300x152.png   300w,
+              https://www.malnad.store/wp-content/uploads/2022/06/Malnad-Store-Registered-Logo-1024x520.png 1024w,
+              https://www.malnad.store/wp-content/uploads/2022/06/Malnad-Store-Registered-Logo-768x390.png   768w,
+              https://www.malnad.store/wp-content/uploads/2022/06/Malnad-Store-Registered-Logo-1x1.png         1w,
+              https://www.malnad.store/wp-content/uploads/2022/06/Malnad-Store-Registered-Logo-10x5.png       10w,
+              https://www.malnad.store/wp-content/uploads/2022/06/Malnad-Store-Registered-Logo-600x305.png   600w
+            "
+            sizes="(max-width: 1167px) 100vw, 1167px"
+        /></span> -->
+      </a>
+    </div>
+
+    <div fxFlex="50" style=" padding-top:60px">
+      <ng-container>
+        <ng-container>
+          <button
+            class="button"
+            #button
+            mat-button
+            style="z-index: 1050"
+            #menuTrigger1="matMenuTrigger"
+            (mouseover)="openMyMenu(menuTrigger1)"
+            [matMenuTriggerFor]="myMenu1"
+          >
+            Menu 1
+          </button>
+          <button class="button" #button mat-button style="z-index: 1050">
+            About us
+          </button>
+          <button class="button" #button mat-button style="z-index: 1050">
+            Blog
+          </button>
+          <button class="button" #button mat-button style="z-index: 1050">
+            Contact Us
+          </button>
+
+          <mat-menu #myMenu1="matMenu" direction="down" yPosition="below">
+            <ng-container>
+              <li class="p-0" mat-menu-item>
+                <a class="nav-link">User_In1 </a>
+              </li>
+            </ng-container>
+            <!-- </span> -->
+          </mat-menu>
+        </ng-container>
+      </ng-container>
+    </div>
+
+    <div fxFlex="30" style=" padding-top:60px" class="border">
+      <span style="inline-block">
+        <button class="login-button">
+          <mat-icon>account_circle</mat-icon>
+          <span style="vertical-align: top;"> LOG IN/SIGN UP </span>
+        </button>
+      </span>
+      <span> &#124; </span>
+
+      <span>
+        <mat-icon>favorite_border</mat-icon>
+        <!-- <button class="fav-button">
+          <span style="vertical-align: top;"> 0 </span>
+        </button> -->
+        <button class="fav-button">0</button>
+      </span>
+      <span> &#124; </span>
+
+      <span>
+        <mat-icon>shopping_cart</mat-icon>
+        <button class="fav-button">0</button>
+      </span>
+    </div>
   </div>
-
-  <div fxFlex="50" class="border">2</div>
-
-  <div fxFlex="30" class="border">3</div>
+  <div>content</div>
 </div>
+
+<!-- 
+
+<table class="menu"><tr><td>
+  <button mat-icon-button 
+     #menuTrigger1="matMenuTrigger"
+    (mouseover)="openMyMenu(menuTrigger1)" 
+   [matMenuTriggerFor]="myMenu1"> Menu 1 </button>
+  
+  <mat-menu #myMenu1="matMenu">
+    <ng-template matMenuContent>
+      <button mat-menu-item>A 1</button>
+      <button mat-menu-item>A 2</button>
+      <button mat-menu-item>A 3</button>
+    </ng-template>
+  </mat-menu>
+  </td><td>
+  <button mat-icon-button 
+     #menuTrigger2="matMenuTrigger"
+    (mouseover)="openMyMenu(menuTrigger2)" 
+   [matMenuTriggerFor]="myMenu2"> Menu 2 </button>
+  
+  <mat-menu #myMenu2="matMenu">
+    <ng-template matMenuContent>
+      <button mat-menu-item>B 1</button>
+      <button mat-menu-item>B 2</button>
+      <button mat-menu-item>B 3</button>
+    </ng-template>
+  </mat-menu>
+  </td></tr></table>  -->

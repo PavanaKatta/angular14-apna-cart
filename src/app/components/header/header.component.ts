@@ -1,5 +1,7 @@
 import { Component } from '@angular/core';
 
+import { MatMenuTrigger } from '@angular/material/menu';
+
 @Component({
   selector: 'app-apna-cart-header',
   templateUrl: './header.component.html',
@@ -9,7 +11,9 @@ export class HeaderComponent {
   matSidenavOpened = false;
   name = 'Brian Love';
 
-  toggleMatSidenav(): void {
-    this.matSidenavOpened = !this.matSidenavOpened;
+  constructor() {}
+
+  openMyMenu(menuTrigger: MatMenuTrigger) {
+    menuTrigger.openMenu();
   }
 }

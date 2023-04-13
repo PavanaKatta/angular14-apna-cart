@@ -2787,3 +2787,39 @@ body.rtl .onsale.single-sale.right {
   border-color: red($color: #000000);
   border-style: solid;
 }
+
+.margin-top-20 {
+  margin-top: 20px;
+}
+
+.login-button {
+  font-size: medium;
+  font-family: inherit;
+  color: black;
+}
+
+// .fav-button {
+//   vertical-align: top;
+//   padding: 0px;
+//   margin-top: 5px;
+//   border-style: solid;
+//   border-radius: 70%;
+//   background-color: #43a047;
+//   color: white;
+//   border: 10px;
+//   font-size: 0.75em;
+//   --et-quantity-proportion: 1.5em;
+// }
+
+.fav-button {
+  background-color: #43a047;
+  color: white;
+  border: none;
+  padding: 5px;
+  font-size: 10px;
+  cursor: pointer;
+  border-radius: 70%;
+  width: 20px;
+  vertical-align: top;
+  margin-top: 3px;
+}
