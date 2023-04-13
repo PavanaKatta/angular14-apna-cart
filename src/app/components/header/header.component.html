@@ -256,7 +256,11 @@ fxLayoutAlign="start stretch"
 </div> -->
 
 <div fxLayout="column" fxLayoutGap="20">
-  <div fxLayout="row" fxLayoutGap="20">
+  <div
+    fxLayout="row"
+    fxLayoutGap="20"
+    style="border-bottom: 1px solid darkgrey"
+  >
     <div fxFlex="20" class="border">
       <a href="https://www.malnad.store">
         <span
@@ -313,7 +317,7 @@ fxLayoutAlign="start stretch"
             (mouseover)="openMyMenu(menuTrigger1)"
             [matMenuTriggerFor]="myMenu1"
           >
-            Menu 1
+            Products
           </button>
           <button class="button" #button mat-button style="z-index: 1050">
             About us
@@ -328,7 +332,14 @@ fxLayoutAlign="start stretch"
           <mat-menu #myMenu1="matMenu" direction="down" yPosition="below">
             <ng-container>
               <li class="p-0" mat-menu-item>
-                <a class="nav-link">User_In1 </a>
+                <a class="nav-link" routerLink="/productList/electronics"
+                  >Electronis
+                </a>
+              </li>
+              <li class="p-0" mat-menu-item>
+                <a class="nav-link" routerLink="/productList/men's clothing"
+                  >Clothings
+                </a>
               </li>
             </ng-container>
             <!-- </span> -->
@@ -344,7 +355,7 @@ fxLayoutAlign="start stretch"
           <span style="vertical-align: top;"> LOG IN/SIGN UP </span>
         </button>
       </span>
-      <span> &#124; </span>
+      <span style="vertical-align: top;"> &#124; </span>
 
       <span>
         <mat-icon>favorite_border</mat-icon>
@@ -353,7 +364,7 @@ fxLayoutAlign="start stretch"
         </button> -->
         <button class="fav-button">0</button>
       </span>
-      <span> &#124; </span>
+      <span style="vertical-align: top;"> &#124; </span>
 
       <span>
         <mat-icon>shopping_cart</mat-icon>
@@ -361,7 +372,9 @@ fxLayoutAlign="start stretch"
       </span>
     </div>
   </div>
-  <div>content</div>
+  <div>
+    <router-outlet></router-outlet>
+  </div>
 </div>
 
 <!-- 
