@@ -262,7 +262,7 @@ fxLayoutAlign="start stretch"
     style="border-bottom: 1px solid darkgrey"
   >
     <div fxFlex="20" class="border">
-      <a href="https://www.malnad.store">
+      <a routerLink="/home">
         <span
           ><img
             width="200"
@@ -348,7 +348,12 @@ fxLayoutAlign="start stretch"
       </ng-container>
     </div>
 
-    <div fxFlex="30" style=" padding-top:60px" class="border">
+    <div
+      fxFlex="30"
+      fxLayoutAlign="end"
+      style=" padding-top:60px"
+      class="border"
+    >
       <span style="inline-block">
         <button class="login-button">
           <mat-icon>account_circle</mat-icon>
@@ -368,7 +373,7 @@ fxLayoutAlign="start stretch"
 
       <span>
         <mat-icon>shopping_cart</mat-icon>
-        <button class="fav-button">{{cartCount}}</button>
+        <button class="fav-button">{{ productService.cartCount }}</button>
       </span>
     </div>
   </div>

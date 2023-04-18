@@ -14,7 +14,7 @@ export class HeaderComponent {
   name = 'Brian Love';
   cartCount = 0;
 
-  constructor(private productService: ProductService) {}
+  constructor(public productService: ProductService) {}
 
   openMyMenu(menuTrigger: MatMenuTrigger) {
     menuTrigger.openMenu();

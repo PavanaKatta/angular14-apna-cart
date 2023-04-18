@@ -40,11 +40,12 @@ export class ProductListComponent implements OnInit {
       if (x.id == productId) {
         if (type == 'I') {
           x.quantity = x.quantity + 1;
+          this.productService.cartCount = this.productService.cartCount + 1;
         } else {
           x.quantity = x.quantity - 1;
+          this.productService.cartCount = this.productService.cartCount - 1;
         }
       }
-      this.productService.cartCount += x.quantity;
     });
   }
 }
