@@ -18,6 +18,8 @@ export class ProductService {
   // Local variable which stores
   public cartItems = [];
   public products = new Subject();
+
+  public cartCount: number = 0;
   //
   private _producturl = 'https://fakestoreapi.com/products';
   constructor(private _http: HttpClient) {}

@@ -34,4 +34,11 @@ export class ProductListComponent implements OnInit {
       console.log(x);
     });
   }
+
+  UpdateCount(){
+
+    
+  }
+
+
 }
