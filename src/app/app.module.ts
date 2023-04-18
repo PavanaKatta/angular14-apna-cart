@@ -20,7 +20,6 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { FooterComponent } from './components/footer/footer.component';
 import { HeaderComponent } from './components/header/header.component';
 import { HomeComponent } from './components/home/home.component';
-import { AboutComponent } from './components/about/about.component';
 import { ProductListComponent } from './components/product/product-list/product-list.component';
 
 // Materail
@@ -32,7 +31,6 @@ import { ProductListComponent } from './components/product/product-list/product-
     HeaderComponent,
     HomeComponent,
     ProductListComponent,
-    AboutComponent,
   ],
   imports: [
     BrowserModule,
