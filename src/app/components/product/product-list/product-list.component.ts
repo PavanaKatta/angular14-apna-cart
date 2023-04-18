@@ -25,9 +25,12 @@ export class ProductListComponent implements OnInit {
   }
 
   getProducts(catName: string) {
-    alert(catName);
     this.productService.getProducts().subscribe((x) => {
       this.products = x.filter((x) => x.category == catName);
+
+      this.products.forEach((x) => {
+        x.quantity = 0;
+      });
       console.log(x);
     });
   }
