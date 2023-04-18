@@ -35,10 +35,16 @@ export class ProductListComponent implements OnInit {
     });
   }
 
-  UpdateCount(){
-
-    
+  UpdateCount(productId: number, type: string) {
+    this.products.forEach((x: any) => {
+      if (x.id == productId) {
+        if (type == 'I') {
+          x.quantity = x.quantity + 1;
+        } else {
+          x.quantity = x.quantity - 1;
+        }
+      }
+      this.productService.cartCount += x.quantity;
+    });
   }
-
-
 }

@@ -2,6 +2,8 @@ import { Component } from '@angular/core';
 
 import { MatMenuTrigger } from '@angular/material/menu';
 
+import { ProductService } from '../../services/product.service';
+
 @Component({
   selector: 'app-apna-cart-header',
   templateUrl: './header.component.html',
@@ -10,10 +12,17 @@ import { MatMenuTrigger } from '@angular/material/menu';
 export class HeaderComponent {
   matSidenavOpened = false;
   name = 'Brian Love';
+  cartCount = 0;
 
-  constructor() {}
+  constructor(private productService: ProductService) {}
 
   openMyMenu(menuTrigger: MatMenuTrigger) {
     menuTrigger.openMenu();
+  }
+
+  ngOnInit(): void {
+    // this.getProducts();
+
+    this.cartCount = this.productService.cartCount;
   }
 }

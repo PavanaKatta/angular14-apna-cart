@@ -35,7 +35,9 @@
 
         <div class="quantity">
           <span class="quantity-controls">
-            <i class="fa fa-minus" style="font-size:15px"></i>
+            <button class="button-color" (click)="UpdateCount(product.id, 'D')">
+              <i class="fa fa-minus" style="font-size:15px"></i>
+            </button>
           </span>
 
           <span>
@@ -56,7 +58,9 @@
             />
           </span>
           <span class="quantity-controls">
-            <i class="fa fa-plus" style="font-size:15px"></i>
+            <button class="button-color" (click)="UpdateCount(product.id, 'I')">
+              <i class="fa fa-plus" style="font-size:15px"></i>
+            </button>
           </span>
         </div>
       </div>

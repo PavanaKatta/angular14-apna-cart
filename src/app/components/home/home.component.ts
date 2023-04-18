@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { IProduct } from '../../model/product';
-// import { ProductService } from '../../services/product.service';
+import { ProductService } from '../../services/product.service';
 
 import { NgbCarouselConfig } from '@ng-bootstrap/ng-bootstrap';
 
@@ -35,16 +35,19 @@ export class HomeComponent implements OnInit {
   ];
 
   upcoming_events = this.event_list;
+  cartCount: number = 0;
   //.filter( event => event.eventStartDate > new Date());
   // past_events = this.event_list.filter(event => event.eventEndingDate < new Date());
   // current_events =  this.event_list.filter( event => (event.eventStartDate >= new Date() && (event.eventEndingDate <= new Date())))
 
-  // constructor(private productService: ProductService) {}
+  constructor(private productService: ProductService) {}
 
-  constructor() {}
+  //constructor() {}
 
   ngOnInit(): void {
-    //    this.getProducts();
+    // this.getProducts();
+
+    this.cartCount = this.productService.cartCount;
   }
 
   // getProducts() {
