@@ -1,413 +1,126 @@
-<!-- <mat-toolbar class="toolbar">
-  <div fxLayout="row" fxLayoutGap="20">
-    <div fxFlex="10"> 
-      <button
-        mat-icon-button
-        aria-label="Toggle menu"
-        (click)="toggleMatSidenav()"
-      >
-        <mat-icon>menu</mat-icon>
-      </button>
-    </div>
-
-    <div fxFlex="40">
-      <span>
-        <i style="font-size: 20px;" class="fas fa-shipping-fast">&nbsp; </i>
-        <strong style="font-size: 20px;">ApnaKart</strong>
-      </span>
-    </div>
-
-    <div fxFlex="90">
-      <div>
-        <input class="seachbox" type="text" placeholder="search products" />
-        <i class="fa-solid fa-magnifying-glass icon"></i>
+<div class="container">
+  <div fxLayout="column" fxLayoutGap="20" style="margin-top:30px">
+    <div fxLayout="row" fxLayoutGap="20">
+      <div fxFlex="20" class="border header__heading">
+        <a routerLink="/home">
+          <span>
+            <img
+              srcset="
+                //cdn.shopify.com/s/files/1/0598/0572/8790/files/Group_5612_100x.png?v=1645059972    1x,
+                //cdn.shopify.com/s/files/1/0598/0572/8790/files/Group_5612_100x@2x.png?v=1645059972 2x
+              "
+              src="//cdn.shopify.com/s/files/1/0598/0572/8790/files/Group_5612_100x.png?v=1645059972"
+              loading="lazy"
+              class="header__heading-logo"
+              width="697"
+              height="264"
+              alt="Taste"
+            />
+          </span>
+        </a>
+      </div>
+      <div fxFlex="50" fxLayoutAlign="end">
+        <!-- <ng-container>
+              <ng-container>
+                <button
+                  class="button font-style"
+                  #button
+                  mat-button
+                  style="z-index: 1050"
+                  #menuTrigger1="matMenuTrigger"
+                  (mouseover)="openMyMenu(menuTrigger1)"
+                  [matMenuTriggerFor]="myMenu1"
+                >
+                  Products
+                </button>
+                <button class="button" #button mat-button style="z-index: 1050">
+                  About us
+                </button>
+                <button class="button" #button mat-button style="z-index: 1050">
+                  Blog
+                </button>
+                <button class="button" #button mat-button style="z-index: 1050">
+                  Contact Us
+                </button>
+              
+                <mat-menu #myMenu1="matMenu" direction="down" yPosition="below">
+                  <ng-container>
+                    <li class="p-0" mat-menu-item>
+                      <a class="nav-link" routerLink="/productList/electronics"
+                        >Electronis
+                      </a>
+                    </li>
+                    <li class="p-0" mat-menu-item>
+                      <a class="nav-link" routerLink="/productList/men's clothing"
+                        >Clothings
+                      </a>
+                    </li>
+                  </ng-container>
+                </mat-menu>
+              </ng-container>
+              </ng-container> -->
+        <div fxLayout="row" fxFlex="100" fxLayoutGap="20">
+          <div fxFlex="10">
+            <button mat-icon-button [matMenuTriggerFor]="menu">
+              <!-- pass local reference of mat-menu to be opened on this click -->
+              <span>Drinks</span>
+              <mat-icon>keyboard_arrow_down</mat-icon>
+            </button>
+          </div>
+          <div fxFlex="10">
+            <button mat-icon-button>
+              <!-- pass local reference of mat-menu to be opened on this click -->
+              <span>Blog</span>
+            </button>
+          </div>
+          <div fxFlex="10">
+            <button mat-icon-button [matMenuTriggerFor]="menu">
+              <!-- pass local reference of mat-menu to be opened on this click -->
+              <span>About</span>
+              <mat-icon>keyboard_arrow_down</mat-icon>
+            </button>
+          </div>
+        </div>
+        <mat-menu #menu="matMenu">
+          <!-- give local reference and tell this is manu by assigning 'matMenu' -->
+          <button mat-menu-item>
+            <mat-icon>dialpad</mat-icon>
+            <span>Redial</span>
+          </button>
+          <button mat-menu-item disabled>
+            <mat-icon>voicemail</mat-icon>
+            <span>Check voicemail</span>
+          </button>
+          <button mat-menu-item>
+            <mat-icon>notifications_off</mat-icon>
+            <span>Disable alerts</span>
+          </button>
+        </mat-menu>
+      </div>
+      <div fxFlex="30" fxLayoutAlign="end" class="border">
+        <span style="inline-block">
+          <button class="login-button">
+            <mat-icon>account_circle</mat-icon>
+            <span style="vertical-align: top;"> LOG IN/SIGN UP </span>
+          </button>
+        </span>
+        <span style="vertical-align: top;"> &#124; </span>
+        <span>
+          <mat-icon>favorite_border</mat-icon>
+          <!-- <button class="fav-button">
+                 <span style="vertical-align: top;"> 0 </span>
+                 </button> -->
+          <button class="fav-button">0</button>
+        </span>
+        <span style="vertical-align: top;"> &#124; </span>
+        <span>
+          <mat-icon>shopping_cart</mat-icon>
+          <button class="fav-button">{{ productService.cartCount }}</button>
+        </span>
       </div>
     </div>
-    <div fxFlex="10" fxLayoutAlign="end">
-      <i style="font-size: 20px;" class="fas fa-shopping-cart right"></i>
-    </div>
-  </div>
-</mat-toolbar>
-
-<mat-sidenav-container class="container">
-  <mat-sidenav [(opened)]="matSidenavOpened" fixedTopGap="64" fixedInViewport>
-    <mat-nav-list>
-      <a mat-list-item routerLink="/home">Home</a>
-      <a mat-list-item routerLink="/about">About</a>
-      <a mat-list-item href="https://liveloveapp.com" target="_blank"
-        >Learn More about LiveLoveApp</a
-      >
-    </mat-nav-list>
-  </mat-sidenav>
-  <mat-sidenav-content class="content">
-    <main>
+    <div>
       <router-outlet></router-outlet>
-    </main>
-  </mat-sidenav-content>
-</mat-sidenav-container>
-
-<app-apna-cart-footer></app-apna-cart-footer> -->
-<!-- 
-fxLayoutAlign="start stretch"
-    style="z-index: 2" -->
-
-<!-- <div fxLayout="column" fxFlexFill>
-  <mat-toolbar class="navbar-color mat-elevation-z8 p-0" fxLayout="column">
-    <div fxLayout="row" style="width:100%" fxLayoutGap="20">
-      <div fxFlex="50" fxShow="false" fxShow.sm fxShow.xs>
-        <button mat-button (click)="drawer.toggle()">
-          <mat-icon>menu</mat-icon>
-        </button>
-      </div>
-
-      <div fxFlex="10">
-        <button
-          mat-button
-          routerLink="/home"
-          routerLinkActive="router-link-active"
-        >
-          <mat-icon>home</mat-icon>
-        </button>
-      </div>
-
-      <div fxFlex="90" fxLayoutGap="20">
-        <span fxFlex="10">
-          <i class="fas fa-shipping-fast">&nbsp; </i>
-          <strong>ApnaKart</strong>
-        </span>
-        <span fxFlex="90">
-          <input
-            class="seachbox"
-            type="text"
-            placeholder="search products for brands and more"
-          />
-          <i class="fa-solid fa-magnifying-glass icon"></i>
-        </span>
-      </div>
-
-      <div fxFlex="10" fxLayoutAlign="end">
-        <i style="font-size: 20px;" class="fas fa-shopping-cart right"></i>
-      </div>
     </div>
-  </mat-toolbar>
-
-  <div
-    fxLayout="row"
-    style="width:100%"
-    fxLayoutAlign="center stretch"
-    fxShow="false"
-    fxShow.gt-sm
-    style="border: 1px solid;padding: 10px;"
-  >
-    <div fxFlex="5" style="text-align: center;cursor: pointer;">
-      <a
-        class="img"
-        routerLink="/productList/electronics"
-        routerLinkActive="selected no-border txt-bold"
-        fxLayout="column"
-        fxLayoutAlign="center stretch"
-      >
-        <div>
-          <img
-            class="img"
-            src="https://rukminim1.flixcart.com/flap/128/128/image/22fddf3c7da4c4f4.png?q=100"
-          />
-        </div>
-        <div class="img-content" style=":hover {background: yellow}">
-          Mobiles
-        </div>
-      </a>
-    </div>
-
-    <div fxFlex="5" style="text-align: center;cursor: pointer;">
-      <a
-        class="img"
-        routerLink="/productList/men's clothing"
-        routerLinkActive="selected no-border txt-bold"
-        fxLayout="column"
-        fxLayoutAlign="center stretch"
-      >
-        <div>
-          <img
-            class="img"
-            src="https://rukminim1.flixcart.com/fk-p-flap/128/128/image/d34810848b2895c9.png?q=100"
-          />
-        </div>
-        <div class="img-content" style=":hover {background: yellow}">
-          Fashion
-        </div>
-      </a>
-    </div>
-
-    <div fxFlex="5" style="text-align: center;cursor: pointer;">
-      <a
-        routerLink="/productList/electronics"
-        routerLinkActive="selected no-border txt-bold"
-        class="img"
-        fxLayout="column"
-        fxLayoutAlign="center stretch"
-      >
-        <div>
-          <img
-            class="img"
-            src="https://rukminim1.flixcart.com/flap/128/128/image/69c6589653afdb9a.png?q=100"
-          />
-        </div>
-        <div class="img-content" style=":hover {background: yellow}">
-          Electronics
-        </div>
-      </a>
-    </div>
-
-    <div fxFlex="5" style="text-align: center;cursor: pointer;">
-      <a
-        routerLink="/productList/electronics"
-        routerLinkActive="selected no-border txt-bold"
-        class="img"
-        fxLayout="column"
-        fxLayoutAlign="center stretch"
-      >
-        <div>
-          <img
-            class="img"
-            src="https://rukminim1.flixcart.com/flap/128/128/image/0ff199d1bd27eb98.png?q=100"
-          />
-        </div>
-        <div
-          id="img-text"
-          class="img-content"
-          style=":hover {background: yellow}"
-        >
-          Appliances
-        </div>
-      </a>
-    </div>
-
-   
-  </div>
-
-  <mat-drawer-container
-    fxFlex
-    fxShow.sm
-    fxShow.xs
-    fxShow="false"
-    autosize
-    class="backround"
-  >
-    <mat-drawer #drawer>
-      <div fxLayout="column">
-        <button
-          mat-button
-          routerLink="/home"
-          routerLinkActive="selected no-border txt-bold"
-          fxLayoutAlign="start"
-          class="py-2 pr-5"
-        >
-          <mat-icon class="mr-2">filter_1</mat-icon>Page 1
-        </button>
-        <mat-divider></mat-divider>
-        <button
-          mat-button
-          routerLink="/productList"
-          routerLinkActive="selected no-border txt-bold"
-          fxLayoutAlign="start"
-          class="py-2 pr-5"
-        >
-          <mat-icon class="mr-2">filter_2</mat-icon>Page 2
-        </button>
-        <mat-divider></mat-divider>
-        <button
-          mat-button
-          routerLink="/page3"
-          routerLinkActive="selected no-border txt-bold"
-          fxLayoutAlign="start"
-          class="py-2 pr-5"
-        >
-          <mat-icon class="mr-2">filter_3</mat-icon>Page 3
-        </button>
-        <mat-divider></mat-divider>
-        <button
-          mat-button
-          routerLink="/page4"
-          routerLinkActive="selected no-border txt-bold"
-          fxLayoutAlign="start"
-          class="py-2 pr-5"
-        >
-          <mat-icon class="mr-2">filter_4</mat-icon>Page 4
-        </button>
-        <mat-divider></mat-divider>
-        <button
-          mat-button
-          routerLink="/page5"
-          routerLinkActive="selected no-border txt-bold"
-          fxLayoutAlign="start"
-          class="py-2 pr-5"
-        >
-          <mat-icon class="mr-2">filter_5</mat-icon>Page 5
-        </button>
-        <mat-divider></mat-divider>
-      </div>
-    </mat-drawer>
-  </mat-drawer-container>
-
-  <div style="display: inline;">
-    <router-outlet></router-outlet>
-  </div>
-</div> -->
-
-<div fxLayout="column" fxLayoutGap="20">
-  <div
-    fxLayout="row"
-    fxLayoutGap="20"
-    style="border-bottom: 1px solid darkgrey"
-  >
-    <div fxFlex="20" class="border">
-      <a routerLink="/home">
-        <span
-          ><img
-            width="200"
-            height="100"
-            src="https://www.malnad.store/wp-content/uploads/2022/06/Malnad-Store-Registered-Logo.png"
-            class="et_b_header-logo-img"
-            alt="Malnad Store Official"
-            decoding="async"
-            srcset="
-              https://www.malnad.store/wp-content/uploads/2022/06/Malnad-Store-Registered-Logo.png          1167w,
-              https://www.malnad.store/wp-content/uploads/2022/06/Malnad-Store-Registered-Logo-300x152.png   300w,
-              https://www.malnad.store/wp-content/uploads/2022/06/Malnad-Store-Registered-Logo-1024x520.png 1024w,
-              https://www.malnad.store/wp-content/uploads/2022/06/Malnad-Store-Registered-Logo-768x390.png   768w,
-              https://www.malnad.store/wp-content/uploads/2022/06/Malnad-Store-Registered-Logo-1x1.png         1w,
-              https://www.malnad.store/wp-content/uploads/2022/06/Malnad-Store-Registered-Logo-10x5.png       10w,
-              https://www.malnad.store/wp-content/uploads/2022/06/Malnad-Store-Registered-Logo-600x305.png   600w
-            "
-            sizes="(max-width: 1167px) 100vw, 1167px"
-        /></span>
-
-        <!-- <span class="fixed"
-          ><img
-            width="1167"
-            height="593"
-            src="https://www.malnad.store/wp-content/uploads/2022/06/Malnad-Store-Registered-Logo.png"
-            class="et_b_header-logo-img"
-            alt="Malnad Store Official"
-            decoding="async"
-            srcset="
-              https://www.malnad.store/wp-content/uploads/2022/06/Malnad-Store-Registered-Logo.png          1167w,
-              https://www.malnad.store/wp-content/uploads/2022/06/Malnad-Store-Registered-Logo-300x152.png   300w,
-              https://www.malnad.store/wp-content/uploads/2022/06/Malnad-Store-Registered-Logo-1024x520.png 1024w,
-              https://www.malnad.store/wp-content/uploads/2022/06/Malnad-Store-Registered-Logo-768x390.png   768w,
-              https://www.malnad.store/wp-content/uploads/2022/06/Malnad-Store-Registered-Logo-1x1.png         1w,
-              https://www.malnad.store/wp-content/uploads/2022/06/Malnad-Store-Registered-Logo-10x5.png       10w,
-              https://www.malnad.store/wp-content/uploads/2022/06/Malnad-Store-Registered-Logo-600x305.png   600w
-            "
-            sizes="(max-width: 1167px) 100vw, 1167px"
-        /></span> -->
-      </a>
-    </div>
-
-    <div fxFlex="50" style=" padding-top:60px">
-      <ng-container>
-        <ng-container>
-          <button
-            class="button"
-            #button
-            mat-button
-            style="z-index: 1050"
-            #menuTrigger1="matMenuTrigger"
-            (mouseover)="openMyMenu(menuTrigger1)"
-            [matMenuTriggerFor]="myMenu1"
-          >
-            Products
-          </button>
-          <button class="button" #button mat-button style="z-index: 1050">
-            About us
-          </button>
-          <button class="button" #button mat-button style="z-index: 1050">
-            Blog
-          </button>
-          <button class="button" #button mat-button style="z-index: 1050">
-            Contact Us
-          </button>
-
-          <mat-menu #myMenu1="matMenu" direction="down" yPosition="below">
-            <ng-container>
-              <li class="p-0" mat-menu-item>
-                <a class="nav-link" routerLink="/productList/electronics"
-                  >Electronis
-                </a>
-              </li>
-              <li class="p-0" mat-menu-item>
-                <a class="nav-link" routerLink="/productList/men's clothing"
-                  >Clothings
-                </a>
-              </li>
-            </ng-container>
-            <!-- </span> -->
-          </mat-menu>
-        </ng-container>
-      </ng-container>
-    </div>
-
-    <div
-      fxFlex="30"
-      fxLayoutAlign="end"
-      style=" padding-top:60px"
-      class="border"
-    >
-      <span style="inline-block">
-        <button class="login-button">
-          <mat-icon>account_circle</mat-icon>
-          <span style="vertical-align: top;"> LOG IN/SIGN UP </span>
-        </button>
-      </span>
-      <span style="vertical-align: top;"> &#124; </span>
-
-      <span>
-        <mat-icon>favorite_border</mat-icon>
-        <!-- <button class="fav-button">
-          <span style="vertical-align: top;"> 0 </span>
-        </button> -->
-        <button class="fav-button">0</button>
-      </span>
-      <span style="vertical-align: top;"> &#124; </span>
-
-      <span>
-        <mat-icon>shopping_cart</mat-icon>
-        <button class="fav-button">{{ productService.cartCount }}</button>
-      </span>
-    </div>
-  </div>
-  <div>
-    <router-outlet></router-outlet>
   </div>
 </div>
-
-<!-- 
-
-<table class="menu"><tr><td>
-  <button mat-icon-button 
-     #menuTrigger1="matMenuTrigger"
-    (mouseover)="openMyMenu(menuTrigger1)" 
-   [matMenuTriggerFor]="myMenu1"> Menu 1 </button>
-  
-  <mat-menu #myMenu1="matMenu">
-    <ng-template matMenuContent>
-      <button mat-menu-item>A 1</button>
-      <button mat-menu-item>A 2</button>
-      <button mat-menu-item>A 3</button>
-    </ng-template>
-  </mat-menu>
-  </td><td>
-  <button mat-icon-button 
-     #menuTrigger2="matMenuTrigger"
-    (mouseover)="openMyMenu(menuTrigger2)" 
-   [matMenuTriggerFor]="myMenu2"> Menu 2 </button>
-  
-  <mat-menu #myMenu2="matMenu">
-    <ng-template matMenuContent>
-      <button mat-menu-item>B 1</button>
-      <button mat-menu-item>B 2</button>
-      <button mat-menu-item>B 3</button>
-    </ng-template>
-  </mat-menu>
-  </td></tr></table>  -->
