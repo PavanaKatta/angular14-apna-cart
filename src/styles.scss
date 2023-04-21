@@ -162,7 +162,14 @@ ngb-carousel .wrapper > img {
 
 .font-style {
   font-family: monospace;
-  font-weight: 600;
+  font-weight: 100;
+}
+
+.font-style:hover {
+  font-weight: 700;
+  border-bottom: 1px solid black;
+  color: black;
+  box-shadow: none;
 }
 
 @media screen and (max-width: 989px) {

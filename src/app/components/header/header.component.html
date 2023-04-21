@@ -63,20 +63,20 @@
           <div fxFlex="10">
             <button mat-icon-button [matMenuTriggerFor]="menu">
               <!-- pass local reference of mat-menu to be opened on this click -->
-              <span>Drinks</span>
+              <span class="font-style">Drinks</span>
               <mat-icon>keyboard_arrow_down</mat-icon>
             </button>
           </div>
           <div fxFlex="10">
             <button mat-icon-button>
               <!-- pass local reference of mat-menu to be opened on this click -->
-              <span>Blog</span>
+              <span class="font-style">Blog</span>
             </button>
           </div>
           <div fxFlex="10">
             <button mat-icon-button [matMenuTriggerFor]="menu">
               <!-- pass local reference of mat-menu to be opened on this click -->
-              <span>About</span>
+              <span class="font-style">About</span>
               <mat-icon>keyboard_arrow_down</mat-icon>
             </button>
           </div>
@@ -99,23 +99,33 @@
       </div>
       <div fxFlex="30" fxLayoutAlign="end" class="border">
         <span style="inline-block">
-          <button class="login-button">
+          <mat-icon>search</mat-icon>
+          <!-- <button class="login-button">
             <mat-icon>account_circle</mat-icon>
             <span style="vertical-align: top;"> LOG IN/SIGN UP </span>
-          </button>
+          </button> -->
         </span>
-        <span style="vertical-align: top;"> &#124; </span>
-        <span>
+        <!-- <span style="vertical-align: top;"> &#124; </span> -->
+
+        <span class="fa-stack small">
+          <!-- <i class="fa-regular fa-circle fa-stack-2x"></i> -->
+          <mat-icon class="fa-stack-2x">favorite_border</mat-icon>
+          <!-- <i class="fa-solid fa-flag fa-stack-1x"></i> -->
+          <a class="fa-stack-1x">0</a>
+        </span>
+
+        <!-- <span>
+
+
+
+
           <mat-icon>favorite_border</mat-icon>
-          <!-- <button class="fav-button">
-                 <span style="vertical-align: top;"> 0 </span>
-                 </button> -->
-          <button class="fav-button">0</button>
-        </span>
+          <a class="fav-button">0</a>
+        </span> -->
         <span style="vertical-align: top;"> &#124; </span>
         <span>
           <mat-icon>shopping_cart</mat-icon>
-          <button class="fav-button">{{ productService.cartCount }}</button>
+          <a class="fav-button">{{ productService.cartCount }}</a>
         </span>
       </div>
     </div>
