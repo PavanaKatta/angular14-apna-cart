@@ -97,38 +97,26 @@
           </button>
         </mat-menu>
       </div>
-      <div fxFlex="30" fxLayoutAlign="end" class="border">
+      <div fxFlex="30" fxLayoutAlign="end" fxLayoutGap="15" class="border">
         <span style="inline-block">
           <mat-icon>search</mat-icon>
-          <!-- <button class="login-button">
-            <mat-icon>account_circle</mat-icon>
-            <span style="vertical-align: top;"> LOG IN/SIGN UP </span>
-          </button> -->
-        </span>
-        <!-- <span style="vertical-align: top;"> &#124; </span> -->
-
-        <span class="fa-stack small">
-          <!-- <i class="fa-regular fa-circle fa-stack-2x"></i> -->
-          <mat-icon class="fa-stack-2x">favorite_border</mat-icon>
-          <span class="fa-stack-1x">
-            <a class="fa-stack-1x-content">90</a>
-          </span>
-          <!-- <i class="fa-solid fa-flag fa-stack-1x"></i> -->
         </span>
 
-        <!-- <span>
+        <span>&#124;</span>
 
-
-
-
-          <mat-icon>favorite_border</mat-icon>
-          <a class="fav-button">0</a>
-        </span> -->
-        <span style="vertical-align: top;"> &#124; </span>
         <span>
-          <mat-icon>shopping_cart</mat-icon>
-          <a class="fav-button">{{ productService.cartCount }}</a>
+          <a href="#" class="notification">
+            <mat-icon class="font-size: 2em;">favorite_border</mat-icon>
+            <span class="badge">99</span>
+          </a>
         </span>
+
+        <span>&#124;</span>
+
+        <a href="#" class="notification">
+          <mat-icon class="font-size: 2em;">shopping_cart</mat-icon>
+          <span class="badge">99</span>
+        </a>
       </div>
     </div>
     <div>

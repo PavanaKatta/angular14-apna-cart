@@ -2850,6 +2850,28 @@ i {
   font-size: 1em;
 }
 
+.notification {
+  text-decoration: none;
+
+  position: relative;
+  display: inline-block;
+}
+
+.notification:hover {
+  background: red;
+}
+
+.notification .badge {
+  position: absolute;
+  top: 8px;
+  right: -15px;
+  padding: 5px 10px;
+  border-radius: 50%;
+  background-color: black;
+  color: #fff;
+  font-size: 0.5em;
+}
+
 // .fa-stack-2x {
 //   font-size: 1.8em;
 // }
