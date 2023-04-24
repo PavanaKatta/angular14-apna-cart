@@ -21,7 +21,7 @@ export class ProductService {
 
   public cartCount: number = 0;
   //
-  private _producturl = 'https://fakestoreapi.com/products';
+  private _producturl = '/assets/products.json'; //'https://fakestoreapi.com/products';
   constructor(private _http: HttpClient) {}
 
   getProducts(): Observable<IProduct[]> {
