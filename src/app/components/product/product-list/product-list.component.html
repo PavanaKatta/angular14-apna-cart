@@ -1,7 +1,47 @@
-<div class="container" fxLayout="row" fxLayoutGap="10">
-  <div fxFlex="20" style="border: 1px solid;padding: 5px;border-width: unset;">
-    <div style="margin-bottom: 10px;" *ngFor="let catItem of categoryTypes">
-      <mat-expansion-panel [disabled]="catItem.subCategories.length != 0">
+<div class="container" fxLayout="column" fxLayoutGap="10">
+  <div
+    fxLayout="row"
+    fxFlex="100"
+    style="border: 1px solid;padding: 5px;border-width: unset;"
+  >
+    <div fxFlex="50">
+      <div
+        fxLayout="row"
+        fxFlex="100"
+        fxLayoutGap="20"
+        style="align-items: center;"
+      >
+        <span> Filters: </span>
+
+        <div fxFlex="10">
+          <button mat-icon-button [matMenuTriggerFor]="availabilityMenu">
+            <!-- pass local reference of mat-menu to be opened on this click -->
+            <span class="font-style">Availability</span>
+            <mat-icon>keyboard_arrow_down</mat-icon>
+          </button>
+        </div>
+      </div>
+      <mat-menu #availabilityMenu="matMenu">
+        <div fxLayout="column" fxLayoutGap="20">
+          <div>
+            <span style="margin-right:50px"> 0 Selected </span>
+            <span>
+              <a>Reset</a>
+            </span>
+          </div>
+
+          <div>
+            <div>In stock</div>
+            <div>Out of stock</div>
+          </div>
+        </div>
+      </mat-menu>
+    </div>
+
+    <div fxFlex="50" fxLayoutAlign="end">Filter:</div>
+
+    <!-- <div style="margin-bottom: 10px;" *ngFor="let catItem of categoryTypes">
+      <mat-expansion-panel [disabled]="catItem.subCategories.length == 0">
         <mat-expansion-panel-header>
           {{ catItem.name }}
         </mat-expansion-panel-header>
@@ -11,15 +51,14 @@
           fxLayoutGap="10"
           *ngFor="let subCat of catItem.subCategories"
         >
-          <span> {{ subCat.name }} </span>
+          <a> {{ subCat.name }} </a>
         </div>
       </mat-expansion-panel>
-    </div>
+    </div> -->
   </div>
 
-  <div fxFlex="80" style="border: 1px solid;padding: 5px;border-width: unset">
+  <div fxFlex="100" style="border: 1px solid;padding: 5px;border-width: unset">
     <div class="row product-list" style="margin: 1em 0;">
-      <!-- START : Product Card -->
       <div
         class="col-sm-12 col-md-6 col-lg-4 product-list__item"
         *ngFor="let product of products; let i = index"
@@ -77,7 +116,6 @@
           </div>
         </div>
       </div>
-      <!-- END : Product Card -->
     </div>
   </div>
 </div>

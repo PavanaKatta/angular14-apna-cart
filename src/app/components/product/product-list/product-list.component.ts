@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewEncapsulation } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { IProduct } from '../../../model/product';
 import { ICategoryType } from '../../../model/categoryType';
@@ -9,6 +9,7 @@ import { LookupService } from '../../../services/lookup.service';
   selector: 'app-apna-cart-product-list',
   templateUrl: './product-list.component.html',
   styleUrls: ['./product-list.component.scss'],
+  encapsulation: ViewEncapsulation.None,
 })
 export class ProductListComponent implements OnInit {
   products: IProduct[] = [];
