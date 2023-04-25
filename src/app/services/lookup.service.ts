@@ -7,7 +7,7 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Observable, of, from, pipe, throwError } from 'rxjs';
 import { retry, catchError } from 'rxjs/operators';
 import { map, tap, share } from 'rxjs/operators';
-import { IProduct } from '../model/product';
+import { ICategoryType } from '../model/categoryType';
 
 import { Subject, BehaviorSubject } from 'rxjs/';
 
@@ -15,18 +15,13 @@ import { Subject, BehaviorSubject } from 'rxjs/';
   providedIn: 'root',
 })
 export class LookupService {
-  // Local variable which stores
-  public cartItems = [];
-  public products = new Subject();
-
-  public cartCount: number = 0;
   //
-  private _producturl = '/assets/products.json'; //'https://fakestoreapi.com/products';
+  private _lookupUrl = '/assets/categoryTypes.json'; //'https://fakestoreapi.com/products';
   constructor(private _http: HttpClient) {}
 
-  getProducts(): Observable<IProduct[]> {
+  getCategoryTypes(): Observable<ICategoryType[]> {
     return this._http
-      .get<IProduct[]>(this._producturl)
+      .get<ICategoryType[]>(this._lookupUrl)
       .pipe(retry(1), catchError(this.handleError));
   }
 

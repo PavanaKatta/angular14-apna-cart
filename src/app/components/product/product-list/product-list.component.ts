@@ -1,7 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { IProduct } from '../../../model/product';
+import { ICategoryType } from '../../../model/categoryType';
 import { ProductService } from '../../../services/product.service';
+import { LookupService } from '../../../services/lookup.service';
 
 @Component({
   selector: 'app-apna-cart-product-list',
@@ -10,16 +12,19 @@ import { ProductService } from '../../../services/product.service';
 })
 export class ProductListComponent implements OnInit {
   products: IProduct[] = [];
+  categoryTypes: ICategoryType[] = [];
   catName: string = '';
 
   constructor(
     private productService: ProductService,
+    private lookupService: LookupService,
     private route: ActivatedRoute
   ) {}
 
   ngOnInit(): void {
     this.route.params.subscribe((params) => {
       let catName = params['catName'];
+      this.getCategoryTypes();
       this.getProducts(catName);
     });
   }
@@ -32,6 +37,12 @@ export class ProductListComponent implements OnInit {
         x.quantity = 0;
       });
       console.log(x);
+    });
+  }
+
+  getCategoryTypes() {
+    this.lookupService.getCategoryTypes().subscribe((x) => {
+      this.categoryTypes = x;
     });
   }
 

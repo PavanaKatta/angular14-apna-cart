@@ -1,14 +1,41 @@
 [
   {
     "id": 1,
-    "name": "Electronics"
+    "name": "Beauty & Hygiene",
+    "subCategories": []
   },
   {
     "id": 2,
-    "name": "Cloth ware"
+    "name": "Beverages",
+    "subCategories": [
+      {
+        "id": 1,
+        "name": "Tea"
+      }
+    ]
   },
   {
-    "id": 2,
-    "name": "Home Appliance"
+    "id": 3,
+    "name": "Coffee",
+    "subCategories": [
+      {
+        "id": 1,
+        "name": "Coffee Decoction"
+      },
+      {
+        "id": 2,
+        "name": "Ground Coffee"
+      }
+    ]
+  },
+  {
+    "id": 4,
+    "name": "Desi Cow Ghee",
+    "subCategories": []
+  },
+  {
+    "id": 5,
+    "name": "Herbal",
+    "subCategories": []
   }
 ]

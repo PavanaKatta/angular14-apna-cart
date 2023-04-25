@@ -1,70 +1,83 @@
-<div class="container">
-  <div class="row product-list" style="margin: 1em 0;">
-    <!-- START : Product Card -->
-    <div
-      class="col-sm-12 col-md-6 col-lg-4 product-list__item"
-      *ngFor="let product of products; let i = index"
-    >
-      <div class="card mb-4 shadow-sm pd-5">
-        <div class="product-list__image">
-          <img
-            style="width: 500px; height: 300px;;"
-            class="card-img-top"
-            src="{{ product.image }}"
-            alt="Card image cap"
-          />
+<div class="container" fxLayout="row" fxLayoutGap="10">
+  <div fxFlex="20" style="border: 1px solid;padding: 5px;border-width: unset;">
+    <div style="margin-bottom: 10px;" *ngFor="let catItem of categoryTypes">
+      <mat-expansion-panel [disabled]="catItem.subCategories.length != 0">
+        <mat-expansion-panel-header>
+          {{ catItem.name }}
+        </mat-expansion-panel-header>
+
+        <div
+          fxLayout="column"
+          fxLayoutGap="10"
+          *ngFor="let subCat of catItem.subCategories"
+        >
+          <span> {{ subCat.name }} </span>
         </div>
+      </mat-expansion-panel>
+    </div>
+  </div>
 
-        <div style="height: 300px" class="card-body">
-          <h4>{{ product.title }}</h4>
-          <p class="card-text">{{ product.description }}</p>
-
-          <!-- <div class="text-center">
-            <button
-              type="button"
-              class="btn btn-sm"
-              [ngClass]="
-                this.isAdded[i] ? 'btn-success' : 'btn-outline-secondary'
-              "
-              (click)="addToCart($event, product.id)"
-            >
-              Add To Cart
-            </button>
-          </div> -->
-        </div>
-
-        <div class="quantity">
-          <span class="quantity-controls">
-            <button class="button-color" (click)="UpdateCount(product.id, 'D')">
-              <i class="fa fa-minus" style="font-size:15px"></i>
-            </button>
-          </span>
-
-          <span>
-            <input
-              type="number"
-              id="quantity_643838e81176a"
-              class="quantity-textbox"
-              name="quantity"
-              value="{{ product.quantity }}"
-              title="Qty"
-              size="4"
-              min="0"
-              max=""
-              step="1"
-              placeholder=""
-              inputmode="numeric"
-              autocomplete="off"
+  <div fxFlex="80" style="border: 1px solid;padding: 5px;border-width: unset">
+    <div class="row product-list" style="margin: 1em 0;">
+      <!-- START : Product Card -->
+      <div
+        class="col-sm-12 col-md-6 col-lg-4 product-list__item"
+        *ngFor="let product of products; let i = index"
+      >
+        <div class="card mb-4 shadow-sm pd-5">
+          <div class="product-list__image">
+            <img
+              style="width: 500px; height: 300px;;"
+              class="card-img-top"
+              src="{{ product.image }}"
+              alt="Card image cap"
             />
-          </span>
-          <span class="quantity-controls">
-            <button class="button-color" (click)="UpdateCount(product.id, 'I')">
-              <i class="fa fa-plus" style="font-size:15px"></i>
-            </button>
-          </span>
+          </div>
+
+          <div style="height: 300px" class="card-body">
+            <h4>{{ product.title }}</h4>
+            <p class="card-text">{{ product.description }}</p>
+          </div>
+
+          <div class="quantity">
+            <span class="quantity-controls">
+              <button
+                class="button-color"
+                (click)="UpdateCount(product.id, 'D')"
+              >
+                <i class="fa fa-minus" style="font-size:15px"></i>
+              </button>
+            </span>
+
+            <span>
+              <input
+                type="number"
+                id="quantity_643838e81176a"
+                class="quantity-textbox"
+                name="quantity"
+                value="{{ product.quantity }}"
+                title="Qty"
+                size="4"
+                min="0"
+                max=""
+                step="1"
+                placeholder=""
+                inputmode="numeric"
+                autocomplete="off"
+              />
+            </span>
+            <span class="quantity-controls">
+              <button
+                class="button-color"
+                (click)="UpdateCount(product.id, 'I')"
+              >
+                <i class="fa fa-plus" style="font-size:15px"></i>
+              </button>
+            </span>
+          </div>
         </div>
       </div>
+      <!-- END : Product Card -->
     </div>
-    <!-- END : Product Card -->
   </div>
 </div>
