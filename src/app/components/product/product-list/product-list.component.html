@@ -160,5 +160,30 @@
         </div>
       </div>
     </div> -->
+
+    <div fxLayout="row wrap" fxLayoutAlign="space-evenly center">
+      <div
+        fxFlex="250px"
+        *ngFor="let product of products"
+        style="margin-bottom: 1em"
+      >
+        <mat-card class="example-card">
+          <mat-card-header>
+            <img
+              style="width: 100px; "
+              src="{{ product.image }}"
+              alt="Card image cap"
+            />
+          </mat-card-header>
+
+          <mat-card-content>
+            <div style="height: 300px" class="card-body">
+              <h4>{{ product.title }}</h4>
+              <p class="card-text">{{ product.description }}</p>
+            </div>
+          </mat-card-content>
+        </mat-card>
+      </div>
+    </div>
   </div>
 </div>
