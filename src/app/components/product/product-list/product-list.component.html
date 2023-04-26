@@ -12,53 +12,99 @@
         style="align-items: center;"
       >
         <span> Filters: </span>
-
-        <div fxFlex="10">
-          <button mat-icon-button [matMenuTriggerFor]="availabilityMenu">
-            <!-- pass local reference of mat-menu to be opened on this click -->
-            <span class="font-style">Availability</span>
-            <mat-icon>keyboard_arrow_down</mat-icon>
-          </button>
+        <div fxFlex="80" fxLayout="row">
+          <span fxFlex="30">
+            <button mat-icon-button [matMenuTriggerFor]="availabilityMenu">
+              <!-- pass local reference of mat-menu to be opened on this click -->
+              <span class="font-style">Availability</span>
+              <mat-icon>keyboard_arrow_down</mat-icon>
+            </button>
+          </span>
+          <span fxFlex="30">
+            <button mat-icon-button [matMenuTriggerFor]="priceMenu">
+              <!-- pass local reference of mat-menu to be opened on this click -->
+              <span class="font-style">Price</span>
+              <mat-icon>keyboard_arrow_down</mat-icon>
+            </button>
+          </span>
         </div>
       </div>
       <mat-menu #availabilityMenu="matMenu">
-        <div fxLayout="column" fxLayoutGap="20">
-          <div>
-            <span style="margin-right:50px"> 0 Selected </span>
-            <span>
+        <div
+          fxLayout="column"
+          fxLayoutGap="20"
+          style="padding-right:5px;padding-left:5px;width: 200px;"
+          fxFlex="100"
+        >
+          <div fxLayout="row" fxFlex="100">
+            <div
+              style="margin-right:50px"
+              class="font-style"
+              fxLayoutAlign="start"
+              fxFlex="60"
+            >
+              Selected
+            </div>
+            <div class="font-style" fxLayoutAlign="end" fxFlex="40">
               <a>Reset</a>
-            </span>
+            </div>
           </div>
-
-          <div>
-            <div>In stock</div>
-            <div>Out of stock</div>
+          <div fxLayout="column" fxLayoutGap="10">
+            <div class="font-style">In stock</div>
+            <div class="font-style">Out of stock</div>
+          </div>
+        </div>
+      </mat-menu>
+      <mat-menu #priceMenu="matMenu">
+        <div
+          fxLayout="column"
+          fxLayoutGap="20"
+          style="padding-right:5px;padding-left:5px;"
+          fxFlex="100"
+        >
+          <div fxLayout="row" fxFlex="100" fxLayoutGap="10">
+            <div class="font-style" fxLayoutAlign="start" fxFlex="80">
+              The highest price is $49.95
+            </div>
+            <div class="font-style" fxLayoutAlign="end" fxFlex="20">
+              <a>Reset</a>
+            </div>
+          </div>
+          <div fxLayout="column" fxLayoutGap="10">
+            <div>
+              <mat-form-field appearance="outline">
+                <input matInput placeholder="Favorite food" value="Sushi" />
+              </mat-form-field>
+            </div>
+            <div class="font-style">Out of stock</div>
           </div>
         </div>
       </mat-menu>
     </div>
 
-    <div fxFlex="50" fxLayoutAlign="end">Filter:</div>
+    <div fxFlex="50" fxLayoutAlign="end" fxLayoutGap="20">
+      <div class="font-style">Sort by:</div>
 
+      <div class="font-style">32 products</div>
+    </div>
     <!-- <div style="margin-bottom: 10px;" *ngFor="let catItem of categoryTypes">
-      <mat-expansion-panel [disabled]="catItem.subCategories.length == 0">
-        <mat-expansion-panel-header>
-          {{ catItem.name }}
-        </mat-expansion-panel-header>
-
-        <div
-          fxLayout="column"
-          fxLayoutGap="10"
-          *ngFor="let subCat of catItem.subCategories"
-        >
-          <a> {{ subCat.name }} </a>
-        </div>
-      </mat-expansion-panel>
-    </div> -->
+        <mat-expansion-panel [disabled]="catItem.subCategories.length == 0">
+          <mat-expansion-panel-header>
+            {{ catItem.name }}
+          </mat-expansion-panel-header>
+        
+          <div
+            fxLayout="column"
+            fxLayoutGap="10"
+            *ngFor="let subCat of catItem.subCategories"
+          >
+            <a> {{ subCat.name }} </a>
+          </div>
+        </mat-expansion-panel>
+        </div> -->
   </div>
-
   <div fxFlex="100" style="border: 1px solid;padding: 5px;border-width: unset">
-    <div class="row product-list" style="margin: 1em 0;">
+    <!-- <div class="row product-list" style="margin: 1em 0;">
       <div
         class="col-sm-12 col-md-6 col-lg-4 product-list__item"
         *ngFor="let product of products; let i = index"
@@ -72,12 +118,10 @@
               alt="Card image cap"
             />
           </div>
-
           <div style="height: 300px" class="card-body">
             <h4>{{ product.title }}</h4>
             <p class="card-text">{{ product.description }}</p>
           </div>
-
           <div class="quantity">
             <span class="quantity-controls">
               <button
@@ -87,7 +131,6 @@
                 <i class="fa fa-minus" style="font-size:15px"></i>
               </button>
             </span>
-
             <span>
               <input
                 type="number"
@@ -116,6 +159,6 @@
           </div>
         </div>
       </div>
-    </div>
+    </div> -->
   </div>
 </div>
