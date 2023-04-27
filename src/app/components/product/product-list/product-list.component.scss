@@ -40,3 +40,44 @@
 //   margin: 10px;
 //   text-align: center;
 // }
+
+.mat-card-header-text {
+  margin: 0px !important;
+}
+
+.product-mat-card {
+  padding: 5px;
+  background-color: white;
+  color: black;
+}
+
+.card-body {
+  margin-top: 10px !important;
+}
+
+.product-header {
+  font-size: 16px;
+  font-weight: 700;
+  line-height: 1;
+  color: #282c3f;
+  margin-bottom: 6px;
+  overflow: hidden;
+  /* text-overflow: ellipsis; */
+  /* white-space: nowrap; */
+  font-family: monospace;
+  width: 300px;
+  text-align: center;
+}
+
+.product-content {
+  color: #535766;
+  font-size: 14px;
+  line-height: 1;
+  margin-bottom: 0;
+  margin-top: 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  font-weight: 400;
+  display: block;
+}

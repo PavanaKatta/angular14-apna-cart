@@ -161,7 +161,7 @@
       </div>
     </div> -->
 
-    <div fxLayout="row wrap" fxLayoutAlign="space-evenly center">
+    <!-- <div fxLayout="row wrap" fxLayoutAlign="space-evenly center">
       <div
         fxFlex="250px"
         *ngFor="let product of products"
@@ -172,7 +172,7 @@
             <img
               style="width: 100px; "
               src="{{ product.image }}"
-              alt="Card image cap"
+              alt="Card image cap" 
             />
           </mat-card-header>
 
@@ -183,6 +183,36 @@
             </div>
           </mat-card-content>
         </mat-card>
+      </div>
+    </div> -->
+
+    <div fxLayout="row wrap" fxLayoutAlign="space-evenly center">
+      <div
+        fxFlex="350px"
+        *ngFor="let product of products"
+        style="margin-bottom: 1em"
+      >
+        <mat-card class="example-card product-mat-card">
+          <mat-card-header>
+            <img
+              style="width: 300px; "
+              src="{{ product.image }}"
+              alt="Card image cap"
+            />
+          </mat-card-header>
+
+          <mat-card-content>
+            <div class="card-body">
+              <h3 class="product-header">
+                {{ product.title }}
+              </h3>
+              <h4 class="product-content">
+                {{ product.description }}
+              </h4>
+            </div>
+          </mat-card-content>
+        </mat-card>
+        <!-- </div> -->
       </div>
     </div>
   </div>
