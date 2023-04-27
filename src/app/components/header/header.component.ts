@@ -11,7 +11,6 @@ import { ProductService } from '../../services/product.service';
 })
 export class HeaderComponent {
   matSidenavOpened = false;
-  name = 'Brian Love';
   cartCount = 0;
 
   constructor(public productService: ProductService) {}
