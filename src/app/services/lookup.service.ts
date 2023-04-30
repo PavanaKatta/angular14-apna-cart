@@ -1,9 +1,5 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
-
-// import { Observable } from 'rxjs/Observable';
-// import 'rxjs/add/operator/map';
-// import 'rxjs/add/operator/do';
 import { Observable, of, from, pipe, throwError } from 'rxjs';
 import { retry, catchError } from 'rxjs/operators';
 import { map, tap, share } from 'rxjs/operators';

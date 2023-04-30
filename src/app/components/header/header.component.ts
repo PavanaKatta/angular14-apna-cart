@@ -29,6 +29,10 @@ export class HeaderComponent {
   ngOnInit(): void {
     // this.getProducts();
 
+    this.lookupService.getCategoryTypes().subscribe((x) => {
+      this.categories = x;
+    });
+
     this.cartCount = this.productService.cartCount;
   }
 }

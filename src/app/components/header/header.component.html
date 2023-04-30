@@ -24,7 +24,6 @@
         </a>
       </div>
       <div fxFlex="50" fxLayoutAlign="end">
-      
         <div fxLayout="row" fxFlex="100" fxLayoutGap="20">
           <div fxFlex="10">
             <button mat-icon-button [matMenuTriggerFor]="menu">
@@ -48,18 +47,13 @@
           </div>
         </div>
         <mat-menu #menu="matMenu">
-          <div fxLayout="column">
+          <div fxLayout="column" *ngFor="let item of categories">
             <div>
               <button mat-button routerLink="/productList/electronics">
-                Basic
+                {{ item.displayName }}
               </button>
             </div>
-
-            <div>
-              <button mat-button>Basic1</button>
-            </div>
           </div>
-       
         </mat-menu>
       </div>
       <div fxFlex="30" fxLayoutAlign="end" fxLayoutGap="15" class="border">
