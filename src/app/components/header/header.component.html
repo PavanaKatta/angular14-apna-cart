@@ -24,45 +24,7 @@
         </a>
       </div>
       <div fxFlex="50" fxLayoutAlign="end">
-        <!-- <ng-container>
-              <ng-container>
-                <button
-                  class="button font-style"
-                  #button
-                  mat-button
-                  style="z-index: 1050"
-                  #menuTrigger1="matMenuTrigger"
-                  (mouseover)="openMyMenu(menuTrigger1)"
-                  [matMenuTriggerFor]="myMenu1"
-                >
-                  Products
-                </button>
-                <button class="button" #button mat-button style="z-index: 1050">
-                  About us
-                </button>
-                <button class="button" #button mat-button style="z-index: 1050">
-                  Blog
-                </button>
-                <button class="button" #button mat-button style="z-index: 1050">
-                  Contact Us
-                </button>
-              
-                <mat-menu #myMenu1="matMenu" direction="down" yPosition="below">
-                  <ng-container>
-                    <li class="p-0" mat-menu-item>
-                      <a class="nav-link" routerLink="/productList/electronics"
-                        >Electronis
-                      </a>
-                    </li>
-                    <li class="p-0" mat-menu-item>
-                      <a class="nav-link" routerLink="/productList/men's clothing"
-                        >Clothings
-                      </a>
-                    </li>
-                  </ng-container>
-                </mat-menu>
-              </ng-container>
-              </ng-container> -->
+      
         <div fxLayout="row" fxFlex="100" fxLayoutGap="20">
           <div fxFlex="10">
             <button mat-icon-button [matMenuTriggerFor]="menu">
@@ -97,20 +59,7 @@
               <button mat-button>Basic1</button>
             </div>
           </div>
-          <!-- give local reference and tell this is manu by assigning 'matMenu' -->
-          <!-- <button mat-menu-item>
-            <mat-icon>dialpad</mat-icon>
-            <span>Redial</span>
-          </button> -->
-
-          <!-- <button mat-menu-item disabled>
-            <mat-icon>voicemail</mat-icon>
-            <span>Check voicemail</span>
-          </button>
-          <button mat-menu-item>
-            <mat-icon>notifications_off</mat-icon>
-            <span>Disable alerts</span>
-          </button> -->
+       
         </mat-menu>
       </div>
       <div fxFlex="30" fxLayoutAlign="end" fxLayoutGap="15" class="border">

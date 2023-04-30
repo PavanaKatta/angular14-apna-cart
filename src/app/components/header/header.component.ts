@@ -3,6 +3,9 @@ import { Component } from '@angular/core';
 import { MatMenuTrigger } from '@angular/material/menu';
 
 import { ProductService } from '../../services/product.service';
+import { LookupService } from '../../services/lookup.service';
+
+import { ICategoryType } from '../../model/categoryType';
 
 @Component({
   selector: 'app-apna-cart-header',
@@ -11,9 +14,13 @@ import { ProductService } from '../../services/product.service';
 })
 export class HeaderComponent {
   matSidenavOpened = false;
-  cartCount = 0;
+  cartCount: number = 0;
+  categories: ICategoryType[] = [];
 
-  constructor(public productService: ProductService) {}
+  constructor(
+    public productService: ProductService,
+    private lookupService: LookupService
+  ) {}
 
   openMyMenu(menuTrigger: MatMenuTrigger) {
     menuTrigger.openMenu();
