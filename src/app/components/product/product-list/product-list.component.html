@@ -192,7 +192,10 @@
         *ngFor="let product of products"
         style="margin-bottom: 1em"
       >
-        <mat-card class="example-card product-mat-card highlight" (click)="navigateToProducts(product.id)">
+        <mat-card
+          class="example-card product-mat-card highlight"
+          (click)="navigateToProducts(product.id)"
+        >
           <mat-card-header>
             <img
               style="width: 300px; "
