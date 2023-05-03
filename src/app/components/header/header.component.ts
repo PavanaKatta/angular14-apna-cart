@@ -6,6 +6,7 @@ import { ProductService } from '../../services/product.service';
 import { LookupService } from '../../services/lookup.service';
 
 import { ICategoryType } from '../../model/categoryType';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-apna-cart-header',
@@ -19,7 +20,8 @@ export class HeaderComponent {
 
   constructor(
     public productService: ProductService,
-    private lookupService: LookupService
+    private lookupService: LookupService,
+    private router: Router
   ) {}
 
   openMyMenu(menuTrigger: MatMenuTrigger) {
@@ -31,8 +33,20 @@ export class HeaderComponent {
 
     this.lookupService.getCategoryTypes().subscribe((x) => {
       this.categories = x;
+      let selectAllProduct: ICategoryType = {
+        id: -1,
+        name: 'selectAll',
+        displayName: 'Select All',
+      };
+      this.categories.unshift(selectAllProduct);
     });
 
     this.cartCount = this.productService.cartCount;
+  }
+
+  navigateToProducts(productName: string) {
+    let routeURL: string = `productList/${productName}`;
+
+    this.router.navigate([routeURL]);
   }
 }

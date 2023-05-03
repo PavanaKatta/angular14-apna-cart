@@ -21,6 +21,7 @@ import { FooterComponent } from './components/footer/footer.component';
 import { HeaderComponent } from './components/header/header.component';
 import { HomeComponent } from './components/home/home.component';
 import { ProductListComponent } from './components/product/product-list/product-list.component';
+import { ProducDetailComponent } from './components/product/product-detail/product-details.component';
 
 // Materail
 
@@ -31,6 +32,7 @@ import { ProductListComponent } from './components/product/product-list/product-
     HeaderComponent,
     HomeComponent,
     ProductListComponent,
+    ProducDetailComponent,
   ],
   imports: [
     BrowserModule,

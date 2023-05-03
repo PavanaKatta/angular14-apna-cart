@@ -1,5 +1,5 @@
 import { Component, OnInit, ViewEncapsulation } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { IProduct } from '../../../model/product';
 import { ICategoryType } from '../../../model/categoryType';
 import { ProductService } from '../../../services/product.service';
@@ -19,7 +19,8 @@ export class ProductListComponent implements OnInit {
   constructor(
     private productService: ProductService,
     private lookupService: LookupService,
-    private route: ActivatedRoute
+    private route: ActivatedRoute,
+    private router: Router
   ) {}
 
   ngOnInit(): void {
@@ -32,7 +33,12 @@ export class ProductListComponent implements OnInit {
 
   getProducts(catName: string) {
     this.productService.getProducts().subscribe((x) => {
-      this.products = x.filter((x) => x.category == catName);
+      this.products =
+        catName !== 'selectAll'
+          ? x.filter((x) => x.category.toLowerCase() == catName.toLowerCase())
+          : x;
+
+      console.log(this.products);
 
       this.products.forEach((x) => {
         x.quantity = 0;
@@ -59,5 +65,11 @@ export class ProductListComponent implements OnInit {
         }
       }
     });
+  }
+
+  navigateToProducts(id: number) {
+    let routeURL: string = `product/${id}`;
+
+    this.router.navigate([routeURL]);
   }
 }

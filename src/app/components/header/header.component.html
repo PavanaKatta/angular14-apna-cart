@@ -49,7 +49,7 @@
         <mat-menu #menu="matMenu">
           <div fxLayout="column" *ngFor="let item of categories">
             <div>
-              <button mat-button routerLink="/productList/electronics">
+              <button mat-button (click)="navigateToProducts(item.name)">
                 {{ item.displayName }}
               </button>
             </div>
