@@ -12,6 +12,8 @@ import { LookupService } from '../../../services/lookup.service';
   encapsulation: ViewEncapsulation.None,
 })
 export class ProducDetailComponent implements OnInit {
+  ProductInfo: any = {};
+
   constructor(
     private productService: ProductService,
     private lookupService: LookupService,
@@ -21,7 +23,15 @@ export class ProducDetailComponent implements OnInit {
   ngOnInit(): void {
     this.route.params.subscribe((params) => {
       let catName = params['id'];
-      alert(catName);
+      this.getProductById(catName);
+    });
+  }
+
+  getProductById(prodId: number) {
+    this.productService.getProducts().subscribe((x) => {
+      this.ProductInfo = x.filter((x) => x.id == prodId)[0];
+
+      console.log(this.ProductInfo);
     });
   }
 }
